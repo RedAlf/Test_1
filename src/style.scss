@@ -1,0 +1,33 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 130px;
+}
+
+.main {
+    border: 1px solid black;
+    width: 15%;
+    min-width: 100px;
+    height: auto;
+    padding: 15px;
+
+    form {
+    display: flex;
+    flex-flow: column;
+    width: 80%;
+
+        input {
+            margin-bottom: 15px;
+            width: 90%;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        .button {
+            width: 80px;
+        }
+    }
+}

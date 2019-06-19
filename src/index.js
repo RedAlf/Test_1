@@ -28,8 +28,26 @@ function isCorrect(val1, val2) {
 
 // При клике на кнопку (либо при нажатии Enter) выводится сумма двух чисел, либо предупреждение о том, что поля пусты или заполнены неподходящими данными
 summ.onclick = function() {
+    let sub1 = 1;                                                           //Вспомогательные переменные для устранения потери точности
+    let sub2 = 1;
+    let sub;
+
+
+    if (firstValue.value < 1) {
+        sub1 = Math.pow(10, firstValue.value.length - 2);
+    };
+
+    if (secondValue.value < 1) {
+        sub2 = Math.pow(10, secondValue.value.length - 2);
+    };
+
+    sub = Math.max(sub1, sub2);
+
+
     if ( isCorrect(firstValue.value, secondValue.value) ) {
-        alert( (+firstValue.value*10 + +secondValue.value*10) / 10 );   // Выводим результат с округлением для устранения потери точности
+        console.log(firstValue.value);
+        console.log(secondValue.value);
+        alert( (firstValue.value*sub + secondValue.value*sub) / sub );   // Выводим результат с округлением для устранения потери точности
     } else {
         alert( 'Введите корректные данные' );
     }
